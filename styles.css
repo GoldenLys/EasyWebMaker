@@ -1,0 +1,238 @@
+:root {
+    --main: #2e4b70;
+    --purple: #512992;
+    --grey: rgb(125, 125, 145);
+    --vert: rgb(0, 120, 50);
+    --red: rgb(227, 41, 62);
+}
+
+body {
+    font-family: 'Electrolize', sans-serif !important;
+    background: linear-gradient(180deg, #172537, #040d15, #060a0e);
+    background-attachment: fixed;
+    font-size: 14px !important;
+    line-height: 14px !important;
+    color: white;
+}
+
+.icon.fa, .icon.fas {
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 900;
+}
+
+.head {
+    background: linear-gradient(to right, #102031, #192738);
+    justify-content: center;
+    font-weight: bold;
+    border-bottom: 1px solid #232f43;
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.head>.title {
+    line-height: 26px;
+    font-size: 26px;
+    text-align: center;
+    padding: 20px 0 25px 0;
+}
+
+.head>.title>.sub {
+    -webkit-text-fill-color: var(--grey)!important;
+    line-height: 14px;
+    font-size: 14px;
+    font-weight: normal;
+    display: block;
+}
+
+.divider:before {
+    display: block;
+    content: "";
+    height: 1px;
+    background: #232f43 !important;
+}
+
+.divider {
+    display: block;
+    text-align: center;
+    width: 100%;
+    height: 6px;
+}
+
+.divider:after {
+    display: block;
+    content: "";
+    width: 60%;
+    height: 6px;
+    margin-top: -3px;
+    margin-left: 20%;
+    border-radius: 10px;
+}
+
+.divider:after {
+    background: radial-gradient(circle, var(--main), var(--purple))!important;
+    background-size: 1000% 500%!important;
+    -webkit-animation: K2KBG 10s ease infinite !important;
+    animation: K2KBG 10s ease infinite !important;
+}
+
+.ui.message .icone .icon:before, .maintitle, #menu>.item:hover .name, #menu>.item:hover .icon, .title {
+    background: radial-gradient(circle, var(--main), var(--purple))!important;
+    background-size: 1000% 500%!important;
+    -webkit-animation: K2KBG 10s ease infinite !important;
+    animation: K2KBG 10s ease infinite !important;
+    font-weight: bold!important;
+    color: var(--main)!important;
+    -webkit-background-clip: text!important;
+    background-clip: text!important;
+    -webkit-text-fill-color: transparent!important;
+    text-shadow: none!important;
+}
+
+@keyframes K2KBG {
+    0% {
+        background-position: 0% 0%;
+    }
+    25% {
+        background-position: 50% 50%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    75% {
+        background-position: 50% 50%;
+    }
+    100% {}
+}
+
+.page {
+    margin: 10px 10%;
+}
+
+.ui.black.message, .ui.inverted.message {
+    position: relative;
+    background: linear-gradient(to right, #192738, transparent);
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border-radius: 10px;
+    padding-left: 35px;
+}
+
+.ui.message .icone {
+    color: white;
+    font-size: 25px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.ui.message .icone:before {
+    content: "";
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: calc(50% - 25px);
+    left: -25px;
+    bottom: 0;
+    border-radius: 25px;
+    background: #192738;
+    box-shadow: 0px 0px 10px 5px #232f43;
+}
+
+.ui.message .icone .icon:before {
+    position: absolute;
+    top: calc(50% - 10px);
+    left: -13px;
+}
+
+.ui.message .header:not(.ui) {
+    padding-bottom: 5px;
+}
+
+::-webkit-scrollbar {
+    background: linear-gradient(180deg, #172537, #040d15, #060a0e);
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    border-radius: 0px;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    width: 10px;
+    border-radius: 10px 0 0 10px;
+    background: rgb(255, 255, 255);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    width: 10px;
+    background: #232f43;
+}
+
+/* MESSAGES */
+
+.bold {
+    font-weight: bold;
+}
+
+.title {
+    font-size: 20px;
+}
+
+img {
+    border-radius: 5px;
+    margin: 5px;
+    width: calc(100% - 10px);
+    height: auto;
+}
+
+.group {
+    display: flex;
+    width: 100%;
+}
+
+.group.group-of-two>* {
+    margin: 5px;
+    width: calc(50% - 10px) !important;
+}
+
+.group.group-of-three>* {
+    margin: 5px;
+    width: calc(33.333% - 10px) !important;
+}
+
+.group.group-of-four>* {
+    margin: 5px;
+    width: calc(25% - 10px) !important;
+}
+
+.group img {
+    border-radius: 5px;
+    margin: 5px;
+    width: calc(33.333% - 10px) !important;
+    height: auto;
+}
+
+.center-aligned {
+    text-align: center;
+}
+
+.left-aligned {
+    text-align: left;
+}
+
+.right-aligned {
+    text-align: right;
+}
+
+br {
+    content: "";
+    margin: 2em;
+    display: block;
+    font-size: 24%;
+  }
+
+.group br { display: none }
