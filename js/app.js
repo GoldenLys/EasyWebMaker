@@ -92,8 +92,7 @@ const GET_IDs = function (data) {
 const DYNAMIC_BUTTONS = function () {
     $(".message").on("click", "#Share", function () {
         let SELECTED = document.createElement('textarea');
-        SELECTED.value = window.location.origin + '#message-' +  $(this).attr("data-id");
-    
+        SELECTED.value = APP.url.replace(window.location.hash, "") + '#message-' +  $(this).attr("data-id");
         document.body.appendChild(SELECTED);
         SELECTED.select();
         document.execCommand('copy');
