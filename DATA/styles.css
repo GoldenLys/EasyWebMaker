@@ -1,19 +1,11 @@
-:root {
-    --main: #2e4b70;
-    --purple: #512992;
-    --grey: rgb(125, 125, 145);
-    --vert: rgb(0, 120, 50);
-    --red: rgb(227, 41, 62);
-}
-
 body {
     font-family: 'Electrolize', sans-serif !important;
-    background: linear-gradient(180deg, #172537, #040d15, #060a0e);
+    background: var(--background);
     background-attachment: fixed;
     margin: 0;
     font-size: 1.15em !important;
     line-height: 1.225em !important;
-    color: white;
+    color: var(--text);
 }
 
 .icon.fa, .icon.fas {
@@ -22,10 +14,10 @@ body {
 }
 
 .head {
-    background: linear-gradient(to right, #102031, #192738);
+    background: var(--menu);
     justify-content: center;
     font-weight: bold;
-    border-bottom: 1px solid #232f43;
+    border-bottom: 1px solid var(--borders);
     display: flex;
     flex: 1 1 auto;
 }
@@ -35,6 +27,16 @@ body {
     font-size: 1em;
     text-align: center;
     padding: 1em 2em 1em 0;
+}
+
+.head>.title>.sub {
+    -webkit-text-fill-color: var(--text);
+    line-height: 14px;
+    text-shadow: 0 0 13px;
+    opacity: .65;
+    font-size: 14px;
+    font-weight: normal;
+    display: block;
 }
 
 #notice-title {
@@ -51,14 +53,6 @@ body {
     padding: .5em 0 1em;
 }
 
-.head>.title>.sub {
-    -webkit-text-fill-color: var(--grey)!important;
-    line-height: 14px;
-    font-size: 14px;
-    font-weight: normal;
-    display: block;
-}
-
 .divider {
     margin: 0;
     width: 100%;
@@ -66,7 +60,7 @@ body {
     border-radius: 5px;
     line-height: 1;
     text-align: center;
-    background: #232f43;
+    background: var(--borders);
     display: inline-block;
 }
 
@@ -74,22 +68,13 @@ body {
     margin: 5px 1em;
     width: calc(100% - 2em);
     height: 1px;
-    border-radius: 5px;
-    line-height: 1;
-    text-align: center;
-    background: #232f43;
     display: block;
 }
 
 .vertical.divider {
     width: 1px;
     height: 1em;
-    border-radius: 5px;
     margin: 0 5px;
-    line-height: 1;
-    text-align: center;
-    background: #232f43;
-    display: inline-block;
 }
 
 #notice-title, .ui.message .icone .icon:before, .maintitle, #menu>.item:hover .name, #menu>.item:hover .icon, .title {
@@ -127,7 +112,7 @@ body {
 
 .ui.black.message, .ui.inverted.message {
     position: relative;
-    background: linear-gradient(to right, #192738, transparent);
+    background: var(--messages);
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
     border-radius: 10px;
@@ -135,8 +120,12 @@ body {
     margin: 5px;
 }
 
+.ui.message .icone.disabled {
+    visibility: hidden;
+}
+
 .ui.message .icone {
-    color: white;
+    color: var(--text);
     font-size: 25px;
     position: absolute;
     top: 0;
@@ -154,7 +143,7 @@ body {
     bottom: 0;
     border-radius: 25px;
     background: #192738;
-    box-shadow: -5px 0px 10px 0px #232f43, 0px 0px 10px 0px #232f43;
+    box-shadow: -5px 0px 10px 0px rgb(255 255 255 / 75%), 0px 0px 10px 0px rgb(255 255 255 / 75%);
 }
 
 .ui.message .icone .icon:before {
@@ -169,10 +158,11 @@ body {
 
 .footer {
     text-align: center;
+    text-shadow: 0 0 13px var(--purple);
 }
 
 ::-webkit-scrollbar {
-    background: linear-gradient(180deg, #172537, #040d15, #060a0e);
+    background: var(--background);
 }
 
 /* Track */
@@ -304,7 +294,7 @@ body {
     text-decoration: none;
     padding: 10px 20px;
     max-height: calc(100% - 2.5px);
-    color: white;
+    color: var(--text);
     font-weight: 600;
     font-size: 1em;
     line-height: 1.15em;
@@ -315,7 +305,7 @@ body {
     height: 2.5px;
     border-radius: 5px;
     width: 0%;
-    background: radial-gradient(circle, var(--main), transparent);
+    background: radial-gradient(circle, var(--borders), transparent);
     display: block;
     position: absolute;
     left: 50%;
@@ -339,7 +329,7 @@ a i, #Share i {
 }
 
 a:hover, #Share:hover {
-    color: white;
+    color: var(--text);
     text-decoration: none;
 }
 
@@ -396,7 +386,7 @@ img::selection, a::selection {
     text-align: center;
     border-radius: 5px;
     background: #192738;
-    box-shadow: -5px 0px 10px 0px #232f43, 0px 0px 10px 0px #232f43;
+    box-shadow: -5px 0px 10px 0px rgb(255 255 255 / 75%), 0px 0px 10px 0px rgb(255 255 255 / 75%);
 }
 
 .transition {
