@@ -1,6 +1,7 @@
 const APP = {
     url: window.location.origin,
-    version: 0.1,
+    name: "Easy Web Maker",
+    version: 0.2,
     icons: { normal: "fas fa-comment-alt-lines", alert: "fas fa-comment-alt-exclamation" },
 };
 
@@ -8,6 +9,7 @@ const REPLACERS = {
     "title": ["<span class='title'>", "</span>"],
     "b": ["<span class='bold'>", "</span>"],
     "img": ["<img src='", "' />"],
+    "img avatar": ["<img class='avatar' src='", "' />"],
     "group": ["<div class='group'>", "</div>"],
     "group of 2": ["<div class='group group-of-two'>", "</div>"],
     "group of 3": ["<div class='group group-of-three'>", "</div>"],
@@ -20,7 +22,10 @@ const REPLACERS = {
 };
 
 (function () {
-    jQuery.get("pages/1.txt", undefined, function (data) {
+    $("#site-title").html(APP.name);
+    $("#site-version").html("v" + APP.version);
+    document.title = APP.name;
+    jQuery.get("source.txt", undefined, function (data) {
 
         let CONTENT = data.replace(/(\n\n|\r)/g, '<br>');
         for (var REPLACE in REPLACERS) {

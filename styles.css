@@ -164,7 +164,7 @@ body {
 ::-webkit-scrollbar-thumb {
     width: 10px;
     border-radius: 10px 0 0 10px;
-    background: rgb(255, 255, 255);
+    background: var(--purple);
 }
 
 ::-webkit-scrollbar-thumb:window-inactive {
@@ -216,6 +216,11 @@ img {
     height: auto;
 }
 
+img.avatar {
+    width: 150px !important;
+    margin: 0 auto;
+}
+
 .center-aligned {
     text-align: center;
 }
@@ -233,6 +238,8 @@ br {
     margin: 2em;
     display: block;
     font-size: 24%;
-  }
+}
 
-.group br { display: none }
+.group br {
+    display: none
+}
