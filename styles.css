@@ -10,8 +10,8 @@ body {
     font-family: 'Electrolize', sans-serif !important;
     background: linear-gradient(180deg, #172537, #040d15, #060a0e);
     background-attachment: fixed;
-    font-size: 14px !important;
-    line-height: 14px !important;
+    font-size: 1em !important;
+    line-height: 1.325em !important;
     color: white;
 }
 
@@ -114,7 +114,7 @@ body {
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
     border-radius: 10px;
-    padding-left: 35px;
+    padding: 1em 2em 1em 35px;
 }
 
 .ui.message .icone {
