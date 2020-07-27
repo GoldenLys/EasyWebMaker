@@ -174,72 +174,73 @@ body {
 
 /* MESSAGES */
 
-.bold {
+.page>.content>.message .bold {
     font-weight: bold;
 }
 
-.title {
+.page>.content>.message .title {
+    display: block;
     font-size: 20px;
 }
 
-img {
+.page>.content>.message img {
     border-radius: 5px;
     margin: 5px;
     width: calc(100% - 10px);
     height: auto;
 }
 
-.group {
+.page>.content>.message .group {
     display: flex;
     width: 100%;
 }
 
-.group.group-of-two>* {
+.page>.content>.message .group.group-of-two>* {
     margin: 5px;
     width: calc(50% - 10px) !important;
 }
 
-.group.group-of-three>* {
+.page>.content>.message .group.group-of-three>* {
     margin: 5px;
     width: calc(33.333% - 10px) !important;
 }
 
-.group.group-of-four>* {
+.page>.content>.message .group.group-of-four>* {
     margin: 5px;
     width: calc(25% - 10px) !important;
 }
 
-.group img {
+.page>.content>.message .group img {
     border-radius: 5px;
     margin: 5px;
     width: calc(33.333% - 10px) !important;
     height: auto;
 }
 
-img.avatar {
+.page>.content>.message img.avatar {
     width: 150px !important;
     margin: 0 auto;
 }
 
-.center-aligned {
+.page>.content>.message .center-aligned {
     text-align: center;
 }
 
-.left-aligned {
+.page>.content>.message .left-aligned {
     text-align: left;
 }
 
-.right-aligned {
+.page>.content>.message .right-aligned {
     text-align: right;
 }
 
-br {
+.page>.content>.message br {
     content: "";
     margin: 2em;
     display: block;
     font-size: 24%;
 }
 
-.group br {
+.page>.content>.message .group br {
     display: none
 }

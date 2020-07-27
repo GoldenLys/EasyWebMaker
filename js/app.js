@@ -1,7 +1,7 @@
 const APP = {
     url: window.location.origin,
     name: "Easy Web Maker",
-    version: 0.2,
+    version: 0.3,
     icons: { normal: "fas fa-comment-alt-lines", alert: "fas fa-comment-alt-exclamation" },
 };
 
