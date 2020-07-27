@@ -27,11 +27,11 @@ example of a full-width image
 
 (message text)
 (title)Some links / menu (.title)
-(link (https://goldenlys.github.io))(icon (fab fa-github))(.icon) Github(.link)
-(vertical divider)
 (link (https://discord.gg/SBuYeHh))(icon (fab fa-discord))(.icon) Discord(.link)
 (vertical divider)
-(link (https://github.com/GoldenLys/EasyWebMaker))(icon (fas fa-code))(.icon) Source Code(.link)
+(link (https://github.com/GoldenLys/EasyWebMaker))(icon (fab fa-github))(.icon) Repository(.link)
+(vertical divider)
+(link (https://raw.githubusercontent.com/GoldenLys/EasyWebMaker/master/source/content.txt))(icon (fas fa-code))(.icon) Source Code(.link)
 (.message)
 
 (message minus)
