@@ -1,6 +1,6 @@
 const APP = {
     url: window.location.href,
-    version: 0.5,
+    version: 0.6,
     icons: {
         normal: "fas fa-comment-alt",
         alert: "fas fa-comment-alt-exclamation",
@@ -19,8 +19,12 @@ var CONFIG = ["", false, false, false, ""];
 const REPLACERS = {
     "title": ["<span class='title'>", "</span>"],
     "b": ["<span class='bold'>", "</span>"],
+    "br": ["<br />", ""],
     "img": ["<img src='", "' />"],
+    "img small avatar": ["<img class='small avatar' src='", "' />"],
     "img avatar": ["<img class='avatar' src='", "' />"],
+    "img big avatar": ["<img class='big avatar' src='", "' />"],
+    "img huge avatar": ["<img class='huge avatar' src='", "' />"],
     "group": ["<div class='group'>", "</div>"],
     "group of 2": ["<div class='group group-of-two'>", "</div>"],
     "group of 3": ["<div class='group group-of-three'>", "</div>"],
@@ -31,6 +35,7 @@ const REPLACERS = {
     "footer": ["<footer class='footer'>", "</footer>"],
     "divider": ["<span class='horizontal divider'></span>", ""],
     "vertical divider": ["<span class='vertical divider'></span>", ""],
+    "code": ["<div class='code'><div class='code-content'>", "</div></div>"],
 };
 
 const MESSAGES_REPLACERS = {
@@ -61,17 +66,32 @@ const CUSTOM_REPLACERS = {
         $("#site-title").html(CONFIG[0]);
         $("#site-version").html("v" + APP.version);
         document.title = CONFIG[0];
-        if(!CONFIG[3]) $(".main-menu").attr("style", "display: none!important");
+    });
+    jQuery.get("source/menu.txt", undefined, function (data) {
+        $("#main-menu").append(ADD_MENU(data));
     });
     jQuery.get("source/content.txt", undefined, function (data) {
-        $("#content").html(CONVERT_TEXT(data));
+        $("#content").html(ADD_CONTENT(data));
         $("#content").html(GET_IDs($("#content").html()));
     });
+    $(window).resize(function(){ GET_CONTENT_SIZE(); });
 })();
 
-const CONVERT_TEXT = function (data) {
+const ADD_MENU = function (data) {
+    let CONTENT = data;
+    for (let REPLACE in REPLACERS) {
+        CONTENT = CONTENT.split("(" + REPLACE + ")").join(REPLACERS[REPLACE][0]).split("(." + REPLACE + ")").join(REPLACERS[REPLACE][1]);
+    }
+    for (let REPLACE in CUSTOM_REPLACERS) {
+        if (REPLACE == "link") CONTENT = CONTENT.split("(" + REPLACE + " (").join("<li>" + CUSTOM_REPLACERS[REPLACE][0]).split("(" + REPLACE + "(").join(CUSTOM_REPLACERS[REPLACE][0]).split("))").join(CUSTOM_REPLACERS[REPLACE][1]).split("(." + REPLACE + ")").join(CUSTOM_REPLACERS[REPLACE][2] + "</li>");
+        else CONTENT = CONTENT.split("(" + REPLACE + " (").join(CUSTOM_REPLACERS[REPLACE][0]).split("(" + REPLACE + "(").join(CUSTOM_REPLACERS[REPLACE][0]).split("))").join(CUSTOM_REPLACERS[REPLACE][1]).split("(." + REPLACE + ")").join(CUSTOM_REPLACERS[REPLACE][2]);
+    }
+    return CONTENT;
+};
+
+const ADD_CONTENT = function (data) {
     let CONTENT = data.replace(/(\r\n\r\n\r\n|\n\n\n|\r\r\r)/gm,"<div class='invisible divider'></div>").replace(/(\r\n\r\n|\n\n|\r\r)/gm,"<div class='horizontal divider'></div>");
-    let ShareEnabled = CONFIG[2] ? "<div class='divider'></div><div id='Share' data-id='[URL]'>Share</div></div>" : "</div>";
+    let ShareEnabled = CONFIG[2] ? "<div class='closing divider'></div><div id='Share' data-id='[URL]'>Share</div></div>" : "</div>";
     let IconsEnabled = CONFIG[1] ? "" : "disabled";
 
     for (let REPLACE in MESSAGES_REPLACERS) {
@@ -88,17 +108,12 @@ const CONVERT_TEXT = function (data) {
 };
 
 const GET_IDs = function (data) {
-    let CurrentURL = APP.url.substring(APP.url.lastIndexOf('#') + 1);
     $('div.message').each(function (index) {
         if (data.match(/[MESSAGEID]/)) $(this).attr("id", "message-" + index);
-        if( index < 10) $(".main-menu").append("<li><a href='#message-" + index + "'>Article " + (index+1) + "</a></li>");
+        if( index < 10 && CONFIG[3]) $(".main-menu").append("<li><a href='#message-" + index + "'>Article " + (index+1) + "</a></li>");
         $(this).children("#Share").attr("data-id", index);
     });
-    if(CurrentURL.match(/message-/)) {
-        $('html, body').animate({
-            scrollTop: parseInt($("#" + CurrentURL).offset().top)
-        }, 2000);
-    }
+    GET_CONTENT_SIZE();
     DYNAMIC_BUTTONS();
 };
 
@@ -113,6 +128,14 @@ const DYNAMIC_BUTTONS = function () {
         document.body.removeChild(SELECTED);
         window.getSelection().removeAllRanges();
     });
+};
+
+const GET_CONTENT_SIZE = function () {
+    let ContentHeight = window.innerHeight - $(".head").height();
+    $(".page #content").attr("style", "height:" + (ContentHeight - 15) + "px;");
+    if(window.location.hash.match(/#message-/)) {
+        $('#content').animate({ scrollTop: parseInt($(window.location.hash).offset().top + $(".head").height()) }, 1000);
+    }
 };
 
 const NOTICE = function(title, content) {

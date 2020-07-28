@@ -1,6 +1,6 @@
 website name: "Easy Web Maker"
 
-main menu: yes
+main menu: no
 message icons: yes
 share button: yes
 theme: "default"

@@ -4,18 +4,24 @@ This is a (b)test page(.b), so don't expect too much.
 (center)Made by Purple Wizard(.center)
 (.message)
 
-(message plus)
-(title)Grouped images example(.title)
-Avatar image
-(img avatar)img/avatar-3.jpg(.img)
+(message)
+(code)test(.code)
+(.message)
 
+(message plus)
+(title)Images(.title)
+Avatar images(br)
+(img small avatar)img/avatar-3.jpg(.img)
+(img avatar)img/avatar-3.jpg(.img)
+(img big avatar)img/avatar-3.jpg(.img)
+(img huge avatar)img/avatar-3.jpg(.img)
 
 (title)here's an example of grouped images(.title)
 (center)
 (group of 3)
-(b)Avatar 1(.b)
-(b)Avatar 2(.b)
-(b)Avatar 3(.b)
+(b)Image 1(.b)
+(b)Image 2(.b)
+(b)Image 3(.b)
 (.center)
 (.group)
 (group of 3)
@@ -24,18 +30,8 @@ Avatar image
 (img avatar)img/avatar-3.jpg(.img)
 (.group)
 
-
 (title)Full width image example(.title)
 (img)img/elysia.jpg(.img)
-(.message)
-
-(message text)
-(title)Some links / menu(.title)
-(link (https://discord.gg/SBuYeHh))(icon (fab fa-discord))(.icon) Discord(.link)
-(vertical divider)
-(link (https://github.com/GoldenLys/EasyWebMaker))(icon (fab fa-github))(.icon) Repository(.link)
-(vertical divider)
-(link (https://raw.githubusercontent.com/GoldenLys/EasyWebMaker/master/source/content.txt))(icon (fas fa-code))(.icon) Source Code(.link)
 (.message)
 
 (message minus)
@@ -45,7 +41,6 @@ horizontal divider
 vertical
 (vertical divider)
 divider
-
 (.message)
 
 (footer)

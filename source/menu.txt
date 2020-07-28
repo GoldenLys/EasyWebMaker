@@ -1,0 +1,4 @@
+(link (https://github.com/GoldenLys))(icon (fas fa-hat-wizard))(.icon)Purple Wizard(.link)
+(link (https://discord.gg/SBuYeHh))(icon (fab fa-discord))(.icon)Discord(.link)
+(link (https://github.com/GoldenLys/EasyWebMaker))(icon (fab fa-github))(.icon)Repository(.link)
+(link (https://raw.githubusercontent.com/GoldenLys/EasyWebMaker/master/source/content.txt))(icon (fas fa-code))(.icon)Source Code(.link)
