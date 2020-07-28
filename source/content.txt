@@ -1,32 +1,36 @@
 (message alert)
-(title)(b) Welcome to Easy Web Maker (.b)(.title)
+(title)Welcome to Easy Web Maker(.title)
 This is a (b)test page(.b), so don't expect too much.
+(center)Made by Purple Wizard(.center)
 (.message)
 
 (message plus)
 (title)Grouped images example(.title)
-here's an example of grouped images
+Avatar image
+(img avatar)img/avatar-3.jpg(.img)
+
+
+(title)here's an example of grouped images(.title)
+(center)
 (group of 3)
-(b)(center)Avatar 1(.center)(.b)
-(b)(center)Avatar 2(.center)(.b)
-(b)(center)Avatar 3(.center)(.b)
+(b)Avatar 1(.b)
+(b)Avatar 2(.b)
+(b)Avatar 3(.b)
+(.center)
 (.group)
-(group)
+(group of 3)
 (img avatar)img/avatar-1.jpg(.img)
 (img avatar)img/avatar-2.jpg(.img)
 (img avatar)img/avatar-3.jpg(.img)
 (.group)
-(center)centered text(.center)
-(.message)
 
-(message smile)
-(title)(b)Full width image example(.b)(.title)
-example of a full-width image
+
+(title)Full width image example(.title)
 (img)img/elysia.jpg(.img)
 (.message)
 
 (message text)
-(title)Some links / menu (.title)
+(title)Some links / menu(.title)
 (link (https://discord.gg/SBuYeHh))(icon (fab fa-discord))(.icon) Discord(.link)
 (vertical divider)
 (link (https://github.com/GoldenLys/EasyWebMaker))(icon (fab fa-github))(.icon) Repository(.link)

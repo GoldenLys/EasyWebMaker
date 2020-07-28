@@ -1,11 +1,29 @@
 body {
     font-family: 'Electrolize', sans-serif !important;
     background: var(--background);
-    background-attachment: fixed;
+    overflow-y: hidden;
     margin: 0;
-    font-size: 1.15em !important;
-    line-height: 1.225em !important;
     color: var(--text);
+}
+
+@media only screen and (min-width: 1824px) {
+    body {
+        font-size: 1.15em !important;
+        line-height: 1.225em !important;
+    }
+    .page {
+        margin: 10px 10%;
+    }
+    .page>#content>.message img.avatar {
+        width: 150px !important;
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    body {
+        font-size: 12pt !important;
+        line-height: 14pt !important;
+    }
 }
 
 .icon.fa, .icon.fas {
@@ -15,14 +33,18 @@ body {
 
 .head {
     background: var(--menu);
+    color: var(--menu-text);
+    border-radius: 5px;
+    margin: 5px;
     justify-content: center;
     font-weight: bold;
-    border-bottom: 1px solid var(--borders);
     display: flex;
     flex: 1 1 auto;
+    box-shadow: 0px 0px 5px 0px var(--shadows), 5px 5px 5px 0px var(--shadows);
 }
 
 .head>.title {
+    color: var(--menu-text);
     line-height: 1.25em;
     font-size: 1em;
     text-align: center;
@@ -30,27 +52,13 @@ body {
 }
 
 .head>.title>.sub {
-    -webkit-text-fill-color: var(--text);
+    -webkit-text-fill-color: var(--menu-text);
     line-height: 14px;
     text-shadow: 0 0 13px;
     opacity: .65;
     font-size: 14px;
     font-weight: normal;
     display: block;
-}
-
-#notice-title {
-    line-height: 1.5em;
-    font-size: 1.25em;
-    text-align: center;
-    padding: 1em 0 .5em;
-}
-
-#notice-content {
-    line-height: 1.25em;
-    font-size: 1em;
-    text-align: center;
-    padding: .5em 0 1em;
 }
 
 .divider {
@@ -77,55 +85,30 @@ body {
     margin: 0 5px;
 }
 
+.invisible.divider {
+    background: transparent;
+    margin: 2em 1em;
+}
+
 #notice-title, .ui.message .icone .icon:before, .maintitle, #menu>.item:hover .name, #menu>.item:hover .icon, .title {
-    background: radial-gradient(circle, var(--main), var(--purple))!important;
-    background-size: 1000% 500%!important;
-    -webkit-animation: K2KBG 10s ease infinite !important;
-    animation: K2KBG 10s ease infinite !important;
-    font-weight: bold!important;
-    color: var(--main)!important;
-    -webkit-background-clip: text!important;
-    background-clip: text!important;
-    -webkit-text-fill-color: transparent!important;
-    text-shadow: none!important;
+    color: var(--theme);
 }
 
-@keyframes K2KBG {
-    0% {
-        background-position: 0% 0%;
-    }
-    25% {
-        background-position: 50% 50%;
-    }
-    50% {
-        background-position: 100% 100%;
-    }
-    75% {
-        background-position: 50% 50%;
-    }
-    100% {}
-}
-
-.page {
-    margin: 10px 10%;
-}
-
-.ui.black.message, .ui.inverted.message {
+.message {
     position: relative;
     background: var(--messages);
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
     border-radius: 10px;
     padding: 1em 2em 1em 35px;
-    margin: 5px;
+    margin: 1.5em 1em 1em;
+    box-shadow: 0px 0px 5px 0px var(--shadows), 5px 5px 5px 0px var(--shadows);
 }
 
-.ui.message .icone.disabled {
+.message .icone.disabled {
     visibility: hidden;
 }
 
-.ui.message .icone {
-    color: var(--text);
+.message .icone {
+    color: var(--theme);
     font-size: 25px;
     position: absolute;
     top: 0;
@@ -133,7 +116,7 @@ body {
     bottom: 0;
 }
 
-.ui.message .icone:before {
+.message .icone:before {
     content: "";
     width: 50px;
     height: 50px;
@@ -142,23 +125,23 @@ body {
     left: -25px;
     bottom: 0;
     border-radius: 25px;
-    background: #192738;
-    box-shadow: -5px 0px 10px 0px rgb(255 255 255 / 75%), 0px 0px 10px 0px rgb(255 255 255 / 75%);
+    background: var(--messages);
+    box-shadow: -2.5px 0px 5px 0px var(--shadows), 4px 0px 10px 0px var(--messages);
 }
 
-.ui.message .icone .icon:before {
+.message .icone .icon:before {
     position: absolute;
     top: calc(50% - 10px);
     left: -13px;
 }
 
-.ui.message .header:not(.ui) {
+.message .header:not(.ui) {
     padding-bottom: 5px;
 }
 
 .footer {
     text-align: center;
-    text-shadow: 0 0 13px var(--purple);
+    text-shadow: 0 0 13px var(--theme);
 }
 
 ::-webkit-scrollbar {
@@ -176,7 +159,7 @@ body {
 ::-webkit-scrollbar-thumb {
     width: 10px;
     border-radius: 5px;
-    border: 1px solid rgb(255 255 255 / 0.1);
+    border: 1px solid var(--borders);
     background: transparent;
 }
 
@@ -194,6 +177,7 @@ body {
 
 .page>#content>.message .title {
     display: block;
+    font-weight: bold;
     font-size: 20px;
 }
 
@@ -233,12 +217,6 @@ body {
     margin: 0 auto;
 }
 
-@media only screen and (min-width: 1824px) {
-    .page>#content>.message img.avatar {
-        width: 150px !important;
-    }
-}
-
 .page>#content>.message .group.group-of-two img.avatar {
     max-width: 50%;
 }
@@ -263,19 +241,6 @@ body {
     text-align: right;
 }
 
-.page>#content>.message br {
-    content: "";
-    margin: 2em;
-    display: block;
-    font-size: 24%;
-}
-
-
-.divider+br,
-.page>#content>.message .group br, .page>#content>br {
-    display: none !important
-}
-
 .main-menu {
     display: inline-block;
     vertical-align: middle;
@@ -294,7 +259,7 @@ body {
     text-decoration: none;
     padding: 10px 20px;
     max-height: calc(100% - 2.5px);
-    color: var(--text);
+    color: var(--menu-text);
     font-weight: 600;
     font-size: 1em;
     line-height: 1.15em;
@@ -319,13 +284,13 @@ body {
 a, #Share {
     position: relative;
     width: fit-content;
-    color: var(--main);
+    color: var(--theme);
     text-decoration: none;
     padding-bottom: 5px
 }
 
 a i, #Share i {
-    color: var(--main);
+    color: var(--theme);
 }
 
 a:hover, #Share:hover {
@@ -347,15 +312,15 @@ a:hover::after, #Share:hover::after {
 }
 
 ::-moz-selection {
-    color: _clear_;
+    color: var(--text);
     text-shadow: 0 0 0;
-    background: var(--main);
+    background: var(--theme);
 }
 
 ::selection {
-    color: _clear_;
+    color: var(--text);
     text-shadow: 0 0 0;
-    background: var(--main);
+    background: var(--theme);
 }
 
 img::selection, a::selection {
@@ -379,14 +344,28 @@ img::selection, a::selection {
     justify-content: center;
 }
 
+#notice-title {
+    line-height: 1.5em;
+    font-size: 1.25em;
+    text-align: center;
+    padding: 1em 0 .5em;
+}
+
+#notice-content {
+    line-height: 1.25em;
+    font-size: 1em;
+    text-align: center;
+    padding: .5em 0 1em;
+}
+
 #NOTICE.active .content {
     position: absolute;
     display: block;
     width: 75%;
     text-align: center;
     border-radius: 5px;
-    background: #192738;
-    box-shadow: -5px 0px 10px 0px rgb(255 255 255 / 75%), 0px 0px 10px 0px rgb(255 255 255 / 75%);
+    background: var(--messages);
+    box-shadow: 0px 0px 5px 0px var(--shadows), 5px 5px 5px 0px var(--shadows);
 }
 
 .transition {
@@ -398,4 +377,23 @@ img::selection, a::selection {
     animation-timing-function: ease;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
+}
+
+.page>#content {
+    height: 90vh;
+    padding: 0 1em;
+    overflow-y: auto;
+}
+
+.page>#content>.message+.divider {
+    display: none;
+}
+
+#Share {
+    padding: 0.5em 1em;
+}
+
+#Share:hover {
+    border-radius: 5px;
+    background-color: var(--theme);
 }

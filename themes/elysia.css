@@ -1,0 +1,13 @@
+body {
+    --background: linear-gradient(#172537, #040d15, #060a0e);
+    --text: white;
+
+    --theme: #512992;
+
+    --menu: linear-gradient(to right, #102031, #192738);
+    --menu-text: white;
+
+    --messages: linear-gradient(to right, #192738, transparent);
+    --borders: #232f43;
+    --shadows: rgb(35 47 67 / 0.15);
+}

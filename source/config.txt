@@ -1,10 +1,6 @@
 website name: "Easy Web Maker"
-message icons: no
+
+main menu: yes
+message icons: yes
 share button: yes
-text color: "black"
-main color: "#ff5b5b"
-accent color: "black"
-messages color: "white"
-background color: "#1c1d1f"
-menu color: "#ff5b5b"
-borders color: "black"
+theme: "default"
