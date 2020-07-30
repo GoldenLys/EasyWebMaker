@@ -10,4 +10,10 @@ body {
     --messages: rgb(55 55 55);
     --borders: rgb(169 169 169 / 35%);
     --shadows: rgb(35 35 35 / 0.75);
+
+    --red: #FF5252;
+    --green: #1DE9B6;
+    --blue: #82B1FF;
+    --yellow: #e6da38;
+    --purple: #8061ee;
 }

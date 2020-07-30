@@ -1,24 +1,57 @@
+@font-face {
+    font-family: 'Avignon PS Pro';
+    src: url('avignon-ps-pro-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avignon PS Pro';
+    src: url('avignon-ps-pro-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Avignon PS Pro DemiBold';
+    src: url('avignon-ps-pro-demibold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avignon PS Pro DemiBold Italic';
+    src: url('avignon-ps-pro-demibolditalic-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
 body {
-    font-family: 'Electrolize', sans-serif !important;
+    font-family: 'Avignon PS Pro', sans-serif !important;
+    font-size: 1rem;
+    line-height: 1.15rem;
     background: var(--background);
     margin: 0;
     color: var(--text);
 }
 
 @media only screen and (min-width: 1824px) {
-    body {
-        font-size: 1.15em !important;
-        line-height: 1.225em !important;
-    }
     .page {
         margin: 0 10%;
     }
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-    body {
-        font-size: 12pt !important;
-        line-height: 14pt !important;
+@media (max-device-width: 1024px) {
+    .head {
+        display: block !important;
+    }
+    .head>#main-menu>li {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+    .head>#main-menu>li>a {
+        width: 100%;
     }
 }
 
@@ -27,7 +60,9 @@ body {
     font-weight: 900;
 }
 
-.page { margin-top: 10px; }
+.page {
+    margin-top: 10px;
+}
 
 .head {
     background: var(--menu);
@@ -38,15 +73,15 @@ body {
     font-weight: bold;
     display: flex;
     flex: 1 1 auto;
-    box-shadow: 0px 0px 5px 0px var(--shadows), 5px 5px 5px 0px var(--shadows);
+    box-shadow: 2.5px 5px 5px 0px var(--shadows);
 }
 
 .head>.title {
     color: var(--menu-text);
-    line-height: 1.25em;
-    font-size: 1em;
+    line-height: 1.5rem;
+    font-size: 1.5rem;
     text-align: center;
-    padding: 1em 2em 1em 0;
+    padding: 1.25rem 1rem;
 }
 
 .head>.title>.sub {
@@ -54,7 +89,7 @@ body {
     line-height: 14px;
     text-shadow: 0 0 13px;
     opacity: .65;
-    font-size: 14px;
+    font-size: .75rem;
     font-weight: normal;
     display: block;
 }
@@ -102,8 +137,8 @@ body {
     position: relative;
     background: var(--messages);
     border-radius: 10px;
-    padding: 1em 2em;
-    margin: 1.5em 1em 1em;
+    padding: .75rem 1.75rem;
+    margin: 1.25rem 0rem 1rem 1rem;
     box-shadow: 0px 0px 5px 0px var(--shadows), 5px 5px 5px 0px var(--shadows);
 }
 
@@ -113,7 +148,7 @@ body {
 
 .message .icone {
     color: var(--theme);
-    font-size: 25px;
+    font-size: 1.5rem;
     position: absolute;
     top: 0;
     left: 0;
@@ -122,13 +157,13 @@ body {
 
 .message .icone:before {
     content: "";
-    width: 50px;
-    height: 50px;
+    width: 3rem;
+    height: 3rem;
     position: absolute;
-    top: calc(50% - 25px);
-    left: -25px;
+    top: calc(50% - 1.5rem);
+    left: -1.5rem;
     bottom: 0;
-    border-radius: 25px;
+    border-radius: 1.5rem;
     background: var(--messages);
     box-shadow: -2.5px 0px 5px 0px var(--shadows), 4px 0px 10px 0px var(--messages);
 }
@@ -182,7 +217,8 @@ body {
 .page>#content>.message .title {
     display: block;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
 }
 
 .page>#content>.message img {
@@ -267,18 +303,22 @@ body {
     position: relative;
     list-style: none;
     margin: 0;
-    padding: 1em 2em 0 0;
+    padding: .75rem 0 0 0;
+}
+
+.main-menu li:not(:last-child) {
+    padding: .75rem 1.25rem 0 0;
 }
 
 .main-menu li a {
     display: block;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 1rem 0 .5rem;
     max-height: calc(100% - 2.5px);
     color: var(--menu-text);
-    font-weight: 600;
-    font-size: 1em;
-    line-height: 1.15em;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.5rem;
 }
 
 .main-menu>li>a:after, a:after, #Share:after {
@@ -354,14 +394,12 @@ img::selection, a::selection {
     align-items: center;
     justify-content: center;
     transition: all .5s ease-out;
-    
 }
 
 #NOTICE.active {
     visibility: visible;
     display: flex;
     background: rgb(0 0 0 / 85%);
-
 }
 
 #notice-title {
@@ -387,7 +425,6 @@ img::selection, a::selection {
     background: var(--messages);
     box-shadow: 0px 0px 5px 0px var(--shadows), 5px 5px 5px 0px var(--shadows);
 }
-
 
 #NOTICE:not(.active) .content {
     background: transparent;
@@ -428,9 +465,29 @@ a i:before {
 }
 
 .code {
-    width: 100%;
     padding: 5px 10px;
+    white-space: pre;
     border-radius: 5px;
-    font-family: monospace;
+    font-size: .75rem;
+    line-height: 1.25rem;
     background-color: var(--background);
+}
+span.red {
+    color: var(--red);
+}
+
+span.green {
+    color: var(--green);
+}
+
+span.blue {
+    color: var(--blue);
+}
+
+span.yellow {
+    color: var(--yellow);
+}
+
+span.purple {
+    color: var(--purple);
 }

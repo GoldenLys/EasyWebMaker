@@ -10,4 +10,10 @@ body {
     --messages: linear-gradient(to right, #192738, transparent);
     --borders: #232f43;
     --shadows: rgb(35 47 67 / 0.15);
+
+    --red: #FF5252;
+    --green: #1DE9B6;
+    --blue: #82B1FF;
+    --yellow: #e6da38;
+    --purple: #8061ee;
 }
