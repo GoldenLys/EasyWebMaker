@@ -55,11 +55,6 @@ body {
     }
 }
 
-.icon.fa, .icon.fas {
-    font-family: "Font Awesome 5 Pro";
-    font-weight: 900;
-}
-
 .page {
     margin-top: 10px;
 }
@@ -231,24 +226,31 @@ body {
 .page>#content>.message .group {
     display: flex;
     width: 100%;
+    align-self: center;
+    vertical-align: middle;
 }
 
 .page>#content>.message .group.group-of-two>* {
     width: calc(50% - 10px) !important;
+    align-self: center;
+    vertical-align: middle;
 }
 
 .page>#content>.message .group.group-of-three>* {
     width: calc(33.333% - 10px) !important;
+    align-self: center;
+    vertical-align: middle;
 }
 
 .page>#content>.message .group.group-of-four>* {
     width: calc(25% - 10px) !important;
+    align-self: center;
+    vertical-align: middle;
 }
 
 .page>#content>.message .group img {
     border-radius: 5px;
     margin: 5px;
-    width: calc(33.333% - 10px) !important;
     height: auto;
 }
 
@@ -465,13 +467,28 @@ a i:before {
 }
 
 .code {
+    position: relative;
     padding: 5px 10px;
+    box-shadow: inset 0px 0px 5px 0px var(--shadows);
     white-space: pre;
     border-radius: 5px;
     font-size: .75rem;
     line-height: 1.25rem;
-    background-color: var(--background);
 }
+
+.code:before {
+    content: "";
+    position: absolute;
+    border-radius: 5px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: block;
+    background-color: var(--background);
+    opacity: 0.15;
+}
+
 span.red {
     color: var(--red);
 }
@@ -490,4 +507,12 @@ span.yellow {
 
 span.purple {
     color: var(--purple);
+}
+
+span.white {
+    color: var(--white);
+}
+
+span.black {
+    color: var(--black);
 }

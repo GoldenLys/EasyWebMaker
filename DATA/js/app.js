@@ -26,6 +26,8 @@ const REPLACERS = {
         "blue": ["<span class='blue'>", "</span>"],
         "yellow": ["<span class='yellow'>", "</span>"],
         "purple": ["<span class='purple'>", "</span>"],
+        "white": ["<span class='white'>", "</span>"],
+        "black": ["<span class='black'>", "</span>"],
         "image small": ["<img class='small' src='", "' />"],
         "image": ["<img src='", "' />"],
         "image big": ["<img class='big' src='", "' />"],
@@ -109,7 +111,7 @@ const ADD_CONTENT = function (data) {
 
     for (let REPLACE in REPLACERS.CUSTOM) {
         CONTENT = CONTENT.split("(" + REPLACE + " (").join(REPLACERS.CUSTOM[REPLACE][0]).split("(" + REPLACE + "(").join(REPLACERS.CUSTOM[REPLACE][0])
-            .split("))").join(REPLACERS.CUSTOM[REPLACE][1]).split("(." + REPLACE + ")").join(REPLACERS.CUSTOM[REPLACE][2]);
+            .split("))").join(REPLACERS.CUSTOM[REPLACE][1]).split(") )").join(REPLACERS.CUSTOM[REPLACE][1]).split("(." + REPLACE + ")").join(REPLACERS.CUSTOM[REPLACE][2]);
     }
 
     for (let REPLACE in REPLACERS.DEFAULT) {

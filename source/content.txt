@@ -2,6 +2,8 @@
 (title)Welcome to Easy Web Maker(.title)
 This is a (b)test page(.b), to show you some examples.
 (center)Made by Purple Wizard(.center)
+(left)Left(.left)
+(right)Right(.right)
 (.message)
 
 (message edit)
@@ -60,5 +62,5 @@ divider
 (.message)
 
 (footer)
-(link (https://github.com/GoldenLys))Purple Wizard(.link) 2020 © All Rights Reserved.
+(link (https://github.com/GoldenLys) )Purple Wizard(.link) 2020 © All Rights Reserved.
 (.footer)
