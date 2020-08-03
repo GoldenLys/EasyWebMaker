@@ -1,0 +1,17 @@
+body {
+    --background: rgb(10 10 20);
+    --text: white;
+    --theme: rgb(3 73 255);
+    --menu: rgb(15 15 27);
+    --menu-text: white;
+    --messages: rgb(18 19 31);
+    --borders: rgb(44 52 67);
+    --shadows: rgb(12 14 26 / .5);
+    --red: #f30056;
+    --green: #10e25c;
+    --blue: #1c67e4;
+    --yellow: #e6da38;
+    --purple: #8061ee;
+    --white: #ffffff;
+    --black: #0f0f0f;
+}

@@ -3,4 +3,4 @@ website name: "Easy Web Maker"
 main menu: no
 message icons: yes
 share button: yes
-theme: "default"
+theme: "ModernUI"
